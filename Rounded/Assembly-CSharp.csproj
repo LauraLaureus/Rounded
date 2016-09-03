@@ -45,14 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
+     <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\ConstantSpeed.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\OnInvisibleDestroyMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\UserCharacterController.cs" />
-     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\DiffuseReflectiveShader.shader" />
-     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpec.shader" />
+     <None Include="Assets\Standard Assets\shader\DifSpecTransp.shader" />
+     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\DiffuseReflectiveShader.shader" />
+     <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Models\Mr. Mo Base Character\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

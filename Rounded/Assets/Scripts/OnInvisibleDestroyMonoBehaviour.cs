@@ -4,6 +4,7 @@ using System.Collections;
 public class OnInvisibleDestroyMonoBehaviour : MonoBehaviour {
 
 	void OnBecameInvisible(){
-		Destroy(gameObject);
+		Debug.Log ("I became invisible");
+		Destroy(this.gameObject);
 	}
 }
