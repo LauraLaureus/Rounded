@@ -48,6 +48,7 @@
      <Compile Include="Assets\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\ConstantSpeed.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\OnInvisibleDestroyMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\UserCharacterController.cs" />
      <None Include="Assets\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\MoveMotionPack\SampleScene\Shaders\DiffuseReflectiveShader.shader" />
