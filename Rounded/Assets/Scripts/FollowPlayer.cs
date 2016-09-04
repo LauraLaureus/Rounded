@@ -9,7 +9,9 @@ public class FollowPlayer : MonoBehaviour {
 
 
 	void LateUpdate () {
-		transform.position = player.transform.position + Vector3.right * distance + Vector3.up * height;
-		transform.LookAt (player.transform.position);
+		if (player != null) {
+			transform.position = player.transform.position + Vector3.right * distance + Vector3.up * height;
+			transform.LookAt (player.transform.position);
+		}
 	}
 }

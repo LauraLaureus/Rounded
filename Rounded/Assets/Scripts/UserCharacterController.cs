@@ -27,4 +27,11 @@ public class UserCharacterController : MonoBehaviour {
 		}
 		rb.velocity += movement;
 	}
+
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.name == "Enemy") {
+			Destroy (this.gameObject);
+			//Debug.Log("Collision");
+		}
+	}
 }
