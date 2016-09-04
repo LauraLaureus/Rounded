@@ -14,7 +14,6 @@ public class FactoryMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		Debug.DrawRay (this.transform.position, Vector3.up, Color.red);
-		Vector3 movement = Vector3.forward*forwardAdjustement;
-		rb.velocity += movement;
+		rb.velocity = Vector3.forward*forwardAdjustement;
 	}
 }
