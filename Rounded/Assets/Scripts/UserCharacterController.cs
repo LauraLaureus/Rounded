@@ -12,6 +12,18 @@ public class UserCharacterController : MonoBehaviour {
 	private float distanceToFloor;
 	public bool isJumping;
 
+	void OnEnable(){
+		DifficultyController.shareDifficulty += updateDifficulty;
+	}
+
+	void updateDifficulty(float d){
+		forwardAdjustement = d;
+	}
+
+	void OnDisable(){
+		DifficultyController.shareDifficulty += updateDifficulty;
+	}
+
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody> ();

@@ -8,6 +8,19 @@ public class RockSpeedController : MonoBehaviour {
 
 	private Rigidbody rb;
 
+
+	void OnEnable(){
+		DifficultyController.shareDifficulty += updateDifficulty;
+	}
+
+	void updateDifficulty(float d){
+		difficulty = d;
+	}
+
+	void OnDisable(){
+		DifficultyController.shareDifficulty += updateDifficulty;
+	}
+
 	// Use this for initialization
 	void Start () {
 		speed = Vector3.forward;
