@@ -10,7 +10,7 @@ public class UserCharacterController : MonoBehaviour {
 	private Rigidbody rb;
 	private Animator animator;
 	private float distanceToFloor;
-	private bool isJumping;
+	public bool isJumping;
 
 	// Use this for initialization
 	void Start () {
@@ -26,13 +26,19 @@ public class UserCharacterController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		rb.velocity = Vector3.forward*forwardAdjustement + Vector3.down*fallingAdjustment;
+		rb.velocity = Vector3.forward*forwardAdjustement ;
+
+		if (isJumping)
+			rb.velocity += Vector3.down * fallingAdjustment;
+
+		if (Physics.Raycast(transform.position,Vector3.down,distanceToFloor+0.1f))
+			isJumping = false;
+
 		if (Input.GetKeyDown (KeyCode.UpArrow) && !isJumping) {
 			rb.velocity += Vector3.up*jumpAdjustement;
 			isJumping = true;
 		}
-		if (Physics.Raycast(transform.position,Vector3.down,distanceToFloor+0.1f))
-			isJumping = false;
+
 
 	}
 

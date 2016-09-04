@@ -3,15 +3,13 @@ using System.Collections;
 
 public class OnInvisibleDestroyMonoBehaviour : MonoBehaviour {
 
-	private bool wasIVisible = false;
 
-	void OnBecameVisible(){
-		wasIVisible = true;
-	}
+	/*void OnBecameInvisible(){
+		Destroy(gameObject);
+	}*/
 
-	void OnBecameInvisible(){
-		Debug.Log ("I became invisible");
-		if(wasIVisible)
-			Destroy(this.gameObject);
+	void OnCollisionExit(Collision col){
+		if (col.collider.gameObject.name == "Enemy")
+			Destroy (gameObject);
 	}
 }
