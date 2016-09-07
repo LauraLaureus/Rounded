@@ -4,6 +4,7 @@ using System.Collections;
 public class FactoryMovement : MonoBehaviour {
 
 	public float forwardAdjustement;
+	public float playerForward;
 
 	private Rigidbody rb;
 
@@ -13,19 +14,24 @@ public class FactoryMovement : MonoBehaviour {
 
 	void OnEnable(){
 		DifficultyController.shareDifficulty += updateDifficulty;
+		UserCharacterController.onPlayerForward += updatePlayerForward;
 	}
 
 	void updateDifficulty(float d){
 		forwardAdjustement = d;
 	}
 
+	void updatePlayerForward(float d){
+		playerForward = d;
+	}
+
 	void OnDisable(){
-		DifficultyController.shareDifficulty += updateDifficulty;
+		DifficultyController.shareDifficulty -= updateDifficulty;
+		UserCharacterController.onPlayerForward -= updateDifficulty;
 	}
 
 
 	void FixedUpdate () {
-		//Debug.DrawRay (this.transform.position, Vector3.up, Color.red);
-		rb.velocity = Vector3.forward*forwardAdjustement;
+		rb.velocity = Vector3.forward*(forwardAdjustement+playerForward);
 	}
 }

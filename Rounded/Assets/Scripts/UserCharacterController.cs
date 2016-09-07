@@ -9,6 +9,7 @@ public class UserCharacterController : MonoBehaviour {
 	private Rigidbody rb;
 	private Animator animator;
 	private float distanceToFloor;
+	private float playerInput;
 
 	public enum PlayerState
 	{
@@ -21,7 +22,7 @@ public class UserCharacterController : MonoBehaviour {
 	private bool landed = false;
 	private int jumps;
 	private int maxJumps = 2;
-
+	private ForwardKeyController rightArrowController;
 
 
 	void OnEnable(){
@@ -41,6 +42,7 @@ public class UserCharacterController : MonoBehaviour {
 		rb = gameObject.GetComponent<Rigidbody> ();
 		animator = gameObject.GetComponent<Animator> ();
 		distanceToFloor = gameObject.GetComponent<Collider> ().bounds.extents.y;
+		rightArrowController = gameObject.GetComponent<ForwardKeyController> ();
 		StartCoroutine (FSM ());
 	}
 
@@ -63,14 +65,25 @@ public class UserCharacterController : MonoBehaviour {
 				landed = false;
 			}
 			else if (!Physics.Raycast(transform.position,Vector3.down,distanceToFloor+0.1f)){
+				landed = false;
 				ChangeState (PlayerState.Fall);
 			}
 			yield return 0;
 		}
 	}
 
+	public delegate void PlayerInput(float i);
+	public static event PlayerInput onPlayerForward;
+
 	void moveForward(){
-		rb.MovePosition(Vector3.MoveTowards(rb.position,rb.position+Vector3.forward,Time.deltaTime*forwardAdjustement));
+
+		if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			playerInput = rightArrowController.useSpeedBooster ();
+			if (onPlayerForward != null)
+				onPlayerForward (playerInput);
+		}
+		
+		rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y,forwardAdjustement+playerInput);
 	}
 
 	IEnumerator Jump(){

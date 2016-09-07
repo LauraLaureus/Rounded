@@ -45,12 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LevelGenerator.cs" />
+     <Compile Include="Assets\ForwardKeyController.cs" />
      <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\DifficultyController.cs" />
      <Compile Include="Assets\Scripts\FactoryMovement.cs" />
      <Compile Include="Assets\Scripts\FloorSpawn.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
+     <Compile Include="Assets\Scripts\OnCollisionEnterDestroy.cs" />
      <Compile Include="Assets\Scripts\OnCollisionExitDestroy.cs" />
      <Compile Include="Assets\Scripts\RockSpeedController.cs" />
      <Compile Include="Assets\Scripts\UserCharacterController.cs" />
