@@ -17,10 +17,10 @@ public class UserCharacterController : MonoBehaviour {
 		Fall
 	}
 
-	public PlayerState state = PlayerState.Forward;
+	private PlayerState state = PlayerState.Forward;
 	private bool landed = false;
-	public int jumps;
-	public int maxJumps = 2;
+	private int jumps;
+	private int maxJumps = 2;
 
 
 
@@ -106,6 +106,7 @@ public class UserCharacterController : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 		if (col.gameObject.CompareTag ("Terrain")) {
+			jumps = 0;
 			landed = true;
 			animator.SetBool("Falling", false);
 			animator.SetFloat ("ForwardAdjustement", forwardAdjustement);

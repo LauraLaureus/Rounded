@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FloorSpawn.cs">
     <Files>
-      <File FileName="Assets\Scripts\UserCharacterController.cs" Line="94" Column="5" />
-      <File FileName="Assets\Scripts\FloorSpawn.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\FloorSpawn.cs" Line="27" Column="60" />
+      <File FileName="Assets\Scripts\DifficultyController.cs" Line="11" Column="2" />
+      <File FileName="Assets\LevelGenerator.cs" Line="25" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
