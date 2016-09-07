@@ -22,9 +22,10 @@ public class FactoryMovement : MonoBehaviour {
 	void OnDisable(){
 		DifficultyController.shareDifficulty += updateDifficulty;
 	}
-	// Update is called once per frame
+
+
 	void FixedUpdate () {
-		Debug.DrawRay (this.transform.position, Vector3.up, Color.red);
+		//Debug.DrawRay (this.transform.position, Vector3.up, Color.red);
 		rb.velocity = Vector3.forward*forwardAdjustement;
 	}
 }
