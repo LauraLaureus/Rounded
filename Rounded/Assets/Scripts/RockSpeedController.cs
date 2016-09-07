@@ -7,7 +7,7 @@ public class RockSpeedController : MonoBehaviour {
 	public float difficulty;
 
 	private Rigidbody rb;
-
+	private float boosterIncrement = 0;
 
 	void OnEnable(){
 		DifficultyController.shareDifficulty += updateDifficulty;
@@ -29,6 +29,10 @@ public class RockSpeedController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		rb.velocity = speed * difficulty;
+		rb.velocity = speed * (difficulty+boosterIncrement);
+	}
+
+	void boosterCaught(){
+		boosterIncrement = 3;
 	}
 }

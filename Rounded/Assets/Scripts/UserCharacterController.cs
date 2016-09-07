@@ -125,4 +125,8 @@ public class UserCharacterController : MonoBehaviour {
 			animator.SetFloat ("ForwardAdjustement", forwardAdjustement);
 		}
 	}
+
+	void boosterCaught(){
+		rightArrowController.recoverSpeedBooster ();
+	}
 }

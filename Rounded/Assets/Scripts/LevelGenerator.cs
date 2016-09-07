@@ -4,8 +4,9 @@ using System.Collections;
 public class LevelGenerator : MonoBehaviour {
 
 	public GameObject prefab;
-	private float lastYPosition = 3.5f;
+	public GameObject banana;
 
+	private bool wasLastOneZero = false;
 
 	void OnEnable(){
 		FloorSpawn.OnNewPositionReached += generate; 
@@ -21,7 +22,8 @@ public class LevelGenerator : MonoBehaviour {
 			genPlatform ();
 		} 
 		else{
-			lastYPosition = 3.5f;
+			wasLastOneZero = true;
+			genBanana (0f);
 		}
 	}
 
@@ -30,28 +32,32 @@ public class LevelGenerator : MonoBehaviour {
 	}
 
 	float f2(){
-		return 0.5f;
+		if (wasLastOneZero)
+			return 0f;
+		else
+			return 0.5f;
 	}
 
+	float f3(){
+		return 0.5f;
+	}
 
 	void genPlatform(){
 		float r = Random.value;
 		if (r < f2 ()) {
-			Instantiate (prefab, new Vector3 (6, lastYPosition, gameObject.transform.position.z), Quaternion.identity);
+			genBanana (3.5f);
+			Instantiate (prefab, new Vector3 (6f, 3.5f, gameObject.transform.position.z), Quaternion.identity);
 		} 
 		else {
-			float newY = swapLastYPosition ();
-			Instantiate (prefab, new Vector3 (6, newY, gameObject.transform.position.z), Quaternion.identity);
-			lastYPosition = newY;
+			genBanana (7f);
+			Instantiate (prefab, new Vector3 (6f, 7f, gameObject.transform.position.z), Quaternion.identity);
 		}
 	}
 
-	float swapLastYPosition(){
-	
-		if (lastYPosition == 3.5f) {
-			return 7f;
-		} else {
-			return 3.5f;
-		}
+	void genBanana(float height){
+		if (Random.value < f3())
+			Instantiate (banana, new Vector3 (0.8f, height+1f, gameObject.transform.position.z), Quaternion.identity);
 	}
+
+
 }
