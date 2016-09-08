@@ -45,12 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BooterDisplay.cs" />
-     <Compile Include="Assets\DistanceDisplay.cs" />
      <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
-     <Compile Include="Assets\ScoreDisplay.cs" />
      <Compile Include="Assets\Scripts\BananaBehaviour.cs" />
+     <Compile Include="Assets\Scripts\BooterDisplay.cs" />
      <Compile Include="Assets\Scripts\DifficultyController.cs" />
+     <Compile Include="Assets\Scripts\DistanceDisplay.cs" />
      <Compile Include="Assets\Scripts\FactoryMovement.cs" />
      <Compile Include="Assets\Scripts\FloorSpawn.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
@@ -60,6 +59,7 @@
      <Compile Include="Assets\Scripts\OnCollisionExitDestroy.cs" />
      <Compile Include="Assets\Scripts\RockSpeedController.cs" />
      <Compile Include="Assets\Scripts\ScoreCounter.cs" />
+     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
      <Compile Include="Assets\Scripts\UserCharacterController.cs" />
      <None Include="Assets\Standard Assets\shader\DifSpecTransp.shader" />
      <None Include="Assets\Motions\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
