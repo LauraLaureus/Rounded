@@ -78,7 +78,7 @@ public class UserCharacterController : MonoBehaviour {
 	void moveForward(){
 
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
-			playerInput = rightArrowController.useSpeedBooster ();
+			playerInput += rightArrowController.useSpeedBooster ();
 			if (onPlayerForward != null)
 				onPlayerForward (playerInput);
 		}

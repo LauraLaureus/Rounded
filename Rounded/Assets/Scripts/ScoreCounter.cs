@@ -4,13 +4,13 @@ using System.Collections;
 public class ScoreCounter : MonoBehaviour {
 
 	public GameObject enemy;
-	public double score = 0;
-
+	public float score = 0;
+	public float distance;
 
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		float distance = Vector3.Distance (enemy.transform.position, transform.position);
-		score += distance * Time.fixedDeltaTime;
+		distance = Vector3.Distance (enemy.transform.position, transform.position);
+		score += Mathf.Round(distance * Time.fixedDeltaTime);
 	}
 }
