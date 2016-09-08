@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DisapearAndDestroy.cs" />
      <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\BananaBehaviour.cs" />
      <Compile Include="Assets\Scripts\BooterDisplay.cs" />
