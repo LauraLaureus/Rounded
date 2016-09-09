@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DisapearAndDestroy.cs" />
      <Compile Include="Assets\Motions\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\Scripts\BananaBehaviour.cs" />
      <Compile Include="Assets\Scripts\BooterDisplay.cs" />
      <Compile Include="Assets\Scripts\DifficultyController.cs" />
+     <Compile Include="Assets\Scripts\DisapearAndDestroy.cs" />
      <Compile Include="Assets\Scripts\DistanceDisplay.cs" />
      <Compile Include="Assets\Scripts\FactoryMovement.cs" />
      <Compile Include="Assets\Scripts\FloorSpawn.cs" />
